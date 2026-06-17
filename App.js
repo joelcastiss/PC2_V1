@@ -3,7 +3,6 @@
  * Conexión con Supabase (REST API directa, sin SDK)
  * ─────────────────────────────────────────────────
  */
-
 // ── Configuración Supabase ────────────────────────────────────────────────
 const SUPABASE_URL = "https://tlofhyivpmkuskwakcwb.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRsb2ZoeWl2cG1rdXNrd2FrY3diIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE3MTUxMDgsImV4cCI6MjA5NzI5MTEwOH0.hhgJ5gEfvnziR2CBDvIvBmUNLUVoGHalywHLNaGOF5s";
