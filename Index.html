@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Pacientes · Clínica</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon">⚕</span>
+        <div>
+          <span class="brand-name">MediRegistro</span>
+          <span class="brand-sub">Sistema de registro clínico</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <div class="page-intro">
+      <h1 class="page-title">Registro de paciente</h1>
+      <p class="page-desc">Complete los datos del paciente para su evaluación médica inicial. Todos los campos marcados con <span class="req-mark">*</span> son obligatorios.</p>
+    </div>
+
+    <form id="formPaciente" novalidate>
+
+      <!-- ── SECCIÓN 1: Datos personales ─────────────────────── -->
+      <section class="form-section">
+        <div class="section-header">
+          <span class="section-badge">01</span>
+          <h2 class="section-title">Datos personales</h2>
+        </div>
+
+        <div class="fields-grid">
+
+          <div class="field-group span-2">
+            <label for="nombres">Nombres <span class="req-mark">*</span></label>
+            <input type="text" id="nombres" name="nombres" placeholder="Ej. María Elena" maxlength="100" />
+            <span class="field-error" id="err-nombres"></span>
+          </div>
+
+          <div class="field-group span-2">
+            <label for="apellidos">Apellidos <span class="req-mark">*</span></label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Ej. García Ríos" maxlength="100" />
+            <span class="field-error" id="err-apellidos"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="dni">DNI <span class="req-mark">*</span></label>
+            <input type="text" id="dni" name="dni" placeholder="8 dígitos" maxlength="8" inputmode="numeric" />
+            <span class="field-error" id="err-dni"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" />
+          </div>
+
+          <div class="field-group">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" placeholder="Años" min="0" max="120" />
+          </div>
+
+          <div class="field-group">
+            <label for="sexo">Sexo</label>
+            <select id="sexo" name="sexo">
+              <option value="">Seleccionar…</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="celular">Celular <span class="req-mark">*</span></label>
+            <input type="tel" id="celular" name="celular" placeholder="9 dígitos mín." maxlength="15" inputmode="numeric" />
+            <span class="field-error" id="err-celular"></span>
+          </div>
+
+          <div class="field-group span-2">
+            <label for="correo">Correo electrónico <span class="req-mark">*</span></label>
+            <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" />
+            <span class="field-error" id="err-correo"></span>
+          </div>
+
+          <div class="field-group span-4">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" placeholder="Av. / Calle / Jr." maxlength="200" />
+          </div>
+
+          <div class="field-group">
+            <label for="distrito">Distrito</label>
+            <input type="text" id="distrito" name="distrito" placeholder="Ej. Miraflores" maxlength="80" />
+          </div>
+
+          <div class="field-group">
+            <label for="estado_civil">Estado civil</label>
+            <select id="estado_civil" name="estado_civil">
+              <option value="">Seleccionar…</option>
+              <option value="Soltero/a">Soltero/a</option>
+              <option value="Casado/a">Casado/a</option>
+              <option value="Conviviente">Conviviente</option>
+              <option value="Divorciado/a">Divorciado/a</option>
+              <option value="Viudo/a">Viudo/a</option>
+            </select>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── SECCIÓN 2: Datos académicos ────────────────────── -->
+      <section class="form-section">
+        <div class="section-header">
+          <span class="section-badge">02</span>
+          <h2 class="section-title">Datos académicos</h2>
+        </div>
+
+        <div class="fields-grid">
+          <div class="field-group span-2">
+            <label for="grado_academico_id">Grado académico <span class="req-mark">*</span></label>
+            <select id="grado_academico_id" name="grado_academico_id">
+              <option value="">Cargando…</option>
+            </select>
+            <span class="field-error" id="err-grado"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECCIÓN 3: Datos médicos ────────────────────────── -->
+      <section class="form-section">
+        <div class="section-header">
+          <span class="section-badge">03</span>
+          <h2 class="section-title">Datos médicos</h2>
+        </div>
+
+        <div class="fields-grid">
+
+          <div class="field-group span-2">
+            <label for="enfermedad_preexistente_id">Enfermedad preexistente <span class="req-mark">*</span></label>
+            <select id="enfermedad_preexistente_id" name="enfermedad_preexistente_id">
+              <option value="">Cargando…</option>
+            </select>
+            <span class="field-error" id="err-enfermedad"></span>
+          </div>
+
+          <div class="field-group">
+            <label>¿Cuenta con seguro de salud?</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="cuenta_seguro" value="si" id="seguro_si" />
+                <span>Sí</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="cuenta_seguro" value="no" id="seguro_no" checked />
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field-group" id="grupo_tipo_seguro" style="display:none;">
+            <label for="tipo_seguro">Tipo de seguro</label>
+            <select id="tipo_seguro" name="tipo_seguro">
+              <option value="">Seleccionar…</option>
+              <option value="SIS">SIS</option>
+              <option value="EsSalud">EsSalud</option>
+              <option value="Privado">Privado</option>
+              <option value="FFAA/PNP">FFAA / PNP</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="field-group span-4">
+            <label for="observaciones">Observaciones adicionales</label>
+            <textarea id="observaciones" name="observaciones" rows="3" placeholder="Información clínica relevante, alergias a medicamentos, etc."></textarea>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ── Mensaje de estado ───────────────────────────────── -->
+      <div id="statusMsg" class="status-msg" role="alert" aria-live="polite"></div>
+
+      <!-- ── Botón ───────────────────────────────────────────── -->
+      <div class="form-footer">
+        <button type="submit" id="btnRegistrar" class="btn-primary">
+          <span class="btn-text">Registrar paciente</span>
+          <span class="btn-spinner" id="btnSpinner" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>MediRegistro &copy; 2025 · Datos almacenados de forma segura en Supabase</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
